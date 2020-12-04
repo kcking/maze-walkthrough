@@ -17,6 +17,32 @@ export default function Home() {
     positionClient.set({ x: 0, y: 0 });
   }, []);
 
+  useEffect(() => {
+    const keyDown = (ev: KeyboardEvent) => {
+      const myPosition = positionClient.getMine() || { x: 0, y: 0 };
+
+      if (["w", "ArrowUp"].includes(ev.key)) {
+        myPosition.y--;
+      }
+      if (["s", "ArrowDown"].includes(ev.key)) {
+        myPosition.y++;
+      }
+      if (["d", "ArrowRight"].includes(ev.key)) {
+        myPosition.x++;
+      }
+      if (["a", "ArrowLeft"].includes(ev.key)) {
+        myPosition.x--;
+      }
+
+      positionClient.set(myPosition);
+    };
+    window.addEventListener("keydown", keyDown);
+
+    return () => {
+      window.removeEventListener("keydown", keyDown);
+    };
+  }, []);
+
   if (!room) {
     return <div>Loading...</div>;
   }
