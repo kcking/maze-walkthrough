@@ -1,5 +1,5 @@
 import { usePresence, useRoom } from "@roomservice/react";
-import { useEffect } from "react";
+import { CSSProperties, useEffect } from "react";
 
 interface Position {
   x: number;
@@ -21,5 +21,20 @@ export default function Home() {
     return <div>Loading...</div>;
   }
 
-  return <div>My username is {room.me}</div>;
+  return (
+    <div>
+      {Object.entries(positions).map(([userID, position]) => {
+        return <Player key={userID} position={position}></Player>;
+      })}
+    </div>
+  );
+}
+
+function Player(props: { position: Position }) {
+  const style: CSSProperties = {
+    position: "absolute",
+    top: `${props.position.y}px`,
+    left: `${props.position.x}px`,
+  };
+  return <div style={style}>🧐</div>;
 }
