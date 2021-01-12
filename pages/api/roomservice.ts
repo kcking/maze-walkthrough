@@ -1,7 +1,6 @@
 import { NextApiRequest } from "next";
 
 export default async function (req: NextApiRequest, res) {
-  //  for now, authenticate everyone as a random username
   const user = req.cookies["roomservice-user"];
   if (!user) {
     throw "missing user cookie";

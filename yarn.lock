@@ -157,9 +157,9 @@
     tiny-invariant "^1.1.0"
 
 "@roomservice/react@^1.0.0":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@roomservice/react/-/react-1.0.2.tgz#a73df1ed005dbbc310ac9179fcc9f4f01b29d0ac"
-  integrity sha512-YzkOSGLY7f3gNUo1Oiv1iuBR4EbXv7IDOpNoRlExTZKRHlxn4G2CrSY16QMFfUMSce5vYj6WlgsNbSODQQ/tyQ==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@roomservice/react/-/react-1.0.3.tgz#5e05760a0d46207cc39f20da376034e14883ebe6"
+  integrity sha512-fjo1f1CJ/3bMhUINbjsHfYmXAqOZjEDis2YyKP2GOoHzA6H85Id1/4IUiYSP/qxHsiOb3YrbAZt1A1LxiOyWCQ==
   dependencies:
     "@roomservice/browser" "^3.0.1"
 
